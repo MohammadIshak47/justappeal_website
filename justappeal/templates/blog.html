@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+  <div class="page-nav m-auto row text-center">
+	<div class="container text-center">
+		<div class="row ">
+			<h2>Blogs</h2>
+			<div class="d-inline m-auto text-center">
+				<span  class="m-auto d-inline"> <a style="text-decoration: none;" href="{% url 'home' %}"><i class="fas fa-home"></i> Home </a></span>
+				<span><i class="fas fa-angle-double-right"></i> Blog </span>
+			</div>
+		</div>
+	</div>
+</div>
+    
+    
+   
+<!-- ################# Our Blog Starts Here#######################--->
+
+    <section class="our-blog">
+         	<div class="container">
+         		
+        		<div class="blog-row row">
+					{% for blog in blogs %}
+        			<div class="col-md-4 col-sm-6">
+        				<div class="single-blog ">
+        					<figure style="display: block;width:100%;margin-left: auto;margin-right: auto;">
+        						<img  height="250px" width="auto" src="{{ blog.blog_img.url }}" alt="">
+        					</figure>
+        					<div class="blog-detail">
+        						<small>{% if blog.appeal.author %}By {{ blog.appeal.author }} {% else %} By Admin {% endif %} | {{ blog.created_date }}</small>
+								<h4>{{ blog.title }}</h4>
+								<p>{{ blog.description|truncatewords:50 }}</p>
+								<div>
+                                    <a href="donate.html" class="btn btn-sm btn-success">Donate Now</a><i></i>
+								</div>
+        					</div>
+        					
+        					
+        				</div>
+        			</div>
+					{% endfor %}
+        			
+        		</div>
+         	</div>
+         </section>
+      
+      
+       
+  {% endblock %}

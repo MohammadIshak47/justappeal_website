@@ -1,0 +1,643 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JustAppeal</title>
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.jpg' %}">
+    
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static '' %}assets/plugins/slider/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/css.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/new.css' %}" />
+
+
+</head>
+
+    
+
+
+<body>
+
+
+    <header class="continer-fluid ">
+        <div class="header-top">
+            <div class="container">
+                <div class="row col-det">
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <ul class="ulleft">
+                            <li>
+                                <i class="far fa-envelope"></i>
+                                sales@justappeal.com
+                                <span>|</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-volume"></i>
+                                +876 987 666 5433
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 folouws">
+
+                        <ul class="ulright">
+                            <li> <small>Folow Us </small>:</li>
+                            <li>
+                                <a href=""><i class="fab fa-facebook-square"></i></a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                
+                            </li>
+                            <li>
+                                <a href=""><i class="fab fa-linkedin"></i></a>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 d-none d-md-block col-md-6 btn-bhed">
+                        <div class="btn-group">
+                            <a class="btn btn-success dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Join Us
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'career' %}">Career</a>
+                               
+                                <a class="dropdown-item" href="{% url 'adviser' %}">Adviser</a>
+                                <a class="dropdown-item" href="{% url 'counsellor' %}">Counsellor</a>
+                                <a class="dropdown-item" href="{% url 'courses' %}">Courses</a>
+                            </div>
+                        </div>
+                       
+                        <div class="btn-group">
+                            <a class="btn btn-success dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Donate
+                            </a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'zakat' %}">Zakat</a>
+                                <a class="dropdown-item" href="{% url 'sadaqah' %}">Sadaqah</a>
+                                <a class="dropdown-item" href="{% url 'gifts' %}">Gift Cards</a>
+                              </ul>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+    <div id="menu-jk" class="header-bottom m-auto ">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container ">
+              <!-- <a class="navbar-brand border rounded" href="/"><b>My Shop</b></a> -->
+              <a href="index.html">
+                <img id="navimg" class="m-auto" src="{% static 'assets/images/justppeal.png' %}" alt="">
+            </a>
+              <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="collapse navbar-collapse " id="">
+                <ul class="navbar-nav  w-100 me-auto mb-2 mb-lg-0 ms-3">
+                  <li class="nav-item active">
+                    <a class="nav-link " aria-current="page" href="/">Home<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item ">
+                    <div class="dropdown">
+                        <a class="dropbtn nav-link" href=""><span class="">Who We Are</span></a>
+                        <div class="dropdown-content">
+                          <a href="{% url 'whyjustappeal' %}">Why JustAppeal</a>
+                          <a href="{% url 'financialinfo' %}">Financial Info</a>
+                         
+                          <a href="{% url 'faq' %}">FAQ</a>
+                        </div>
+                      </div>
+                    
+                </li>
+                  
+                  
+                <li class="nav-item dropdown1">
+                    <div class="dropdown">
+                        <a class="dropbtn nav-link" href=""><span class="">Appeals</span></a>
+                        <div class="dropdown-content">
+                          <a href="{% url 'appeals' %}">Current Appeals</a>
+                         
+                          <a href="{% url 'globalappeals' %}">Global Giving Appeals</a>
+                        </div>
+                      </div> 
+                    
+                    
+                </li>
+
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <a class="dropbtn nav-link" href=""><span class="">Ways To Help</span></a>
+                        <div class="dropdown-content">
+                          
+                          <a href="{% url 'events' %}">Events</a>
+                          <a href="{% url 'volentures' %}">Volunteers</a>
+                          
+                        </div>
+                      </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <a class="dropbtn nav-link" href=""><span class="">Media Centre</span></a>
+                        <div class="dropdown-content">
+                          <a href="{% url 'blogs' %}">Blog</a>
+                         
+                          <a href="{% url 'gallery' %}">Gallery</a>
+                        </div>
+                      </div>
+                    
+                </li>
+
+                <li class="nav-item">
+                    
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact_us' %}"><span class="">Contact</span></a>
+                </li>
+                
+            
+                
+                <li class="nav-item">
+                    <form class="d-flex ms-2" method="GET" action="{% url 'search' %}">
+           
+                        <input class="form-control m-auto ms-2 me-2" type="search" placeholder="Search" name="search"   aria-label="Search" required>
+                        <button class="btn btn-success h-25" type="submit">Search</button>
+                    </form>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    </nav>
+ </div> 
+
+
+
+
+
+
+<!--         
+        <div id="menu-jk" class="header-bottom m-auto">
+            <div class="container">
+                <div class="row nav-row">
+                    <div class="col-lg-2 m-auto  col-md-12 logo">
+                        <a href="index.html">
+                            <img  src="assets/images/logo.png" alt="">
+                            <a data-toggle="collapse" data-target="#menu" href="#menu"><i
+                                    class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
+                        </a>
+
+                    </div>
+                    <div style="height: 60px;" id="menu" class=" col-lg-10 col-md-5 m-0 p-0 d-none d-lg-block nav-col ">
+
+                        <ul class="navbad m-auto ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about_us.html">About Us</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="appeals.html">Appeals</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" href="gallery.html">Gallery</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact_us.html">Contact</a>
+                            </li>
+
+                            <li class="nav-item  " style="display: inline-block;">
+                                <form class="d-flex" method="" >                                 
+                                     <input style="margin-right: 6px;" class="form-control" type="search" placeholder="Search" name="search"   aria-label="Search" required>
+                                     <button  class=" h-25 w-25 btn btn-success" type="submit">Search</button>
+                                   </form>      
+                            </li>
+                            <li id="cart" style="width: 60px;height: 60px;" class="nav-item"><a class="m-auto" style="border: none;"  href="cart.html"><img src="assets/images/cart.png" alt=""></a>
+                            </li>                    
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </header>
+{% block body %}
+
+    <!-- ******************** Slider Starts Here ******************* -->
+    <div class="slider">
+        <!-- Set up your HTML -->
+        <div class="owl-carousel ">
+            <div class="slider-img">
+                <div class="item">
+                    <div class="slider-img"><img src="{% static 'assets/images/slider/slider-3.jpg' %}" alt=""></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                                <div class="animated bounceInDown slider-captions">
+                                    <h1 class="slider-title">Most Stylish Free Travel Website</h1>
+                                    <p class="slider-text hidden-xs">Lorem Ipsum is simply dummy text of the printing
+                                        and typesetting industry. Lorem Ipsum has been the industry's</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="slider-img"><img src="{% static 'assets/images/slider/slider-1.jpg' %}" alt=""></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                            <div class="slider-captions ">
+                                <h1 class="slider-title">It's time for better help.</h1>
+                                <p class="slider-text hidden-xs">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="slider-img"><img src="{% static 'assets/images/slider/slider-2.jpg' %}" alt=""></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                            <div class="slider-captions ">
+                                <h1 class="slider-title">Most Attractive Travel Template</h1>
+                                <p class="slider-text hidden-xs">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--  ************************* About Us Starts Here ************************** -->
+
+    <div class="about-us container-fluid">
+        <div class="container">
+
+            <div class="row natur-row no-margin w-100">
+                <div class="text-part col-md-6">
+                    <h2>About Our Charity</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius faucibus
+                        ligula non congue. Suspendisse at pretium massa, sit amet
+                        vulputate nibh. Nam posuere eros dolor. Donec vel arcu sagittis, pretium nisl </p>
+                    <p> Cras faucibus laoreet nibh, sit amet tincidunt leo mollis in. Etiam eu mauris metus.
+                        Nulla facilisi. Etiam vestibulum,
+                        nisi et convallis elementum, leo orci aliquam metus, id posuere massa neque vitae
+                        arcu.</p>
+
+                    <p>Integer vulputate vehicula dolor a eleifend. Duis aliquam condimentum sapien,
+                        eget tempor justo. Aenean porttitor nibh metus, sollicitudin egestas metus posuere et
+                        . Fusce egestas volutpat metus, in sodales sem bibendum porta. Nunc hendrerit nunc sit
+                        amet tellus posuere, at malesuada sem gravida. Integer maximus ultricies augue, at
+                        dapibus elit bibendum consequat. Cras faucibus tellus eleifend, fermentum purus in,
+                        dapibus sapien. Praesent nec ornare risus. Etiam iaculis, ligula vel gravida
+                        vestibulum, urna justo posuere ante,
+                        id pretium massa arcu sed mi. Nunc a sollicitudin sem. Duis tempus </p>
+                </div>
+                <div class="image-part col-md-6">
+                    <div class="about-quick-box row">
+                        <div class="col-md-6">
+                            <div class="about-qcard">
+                                <i class="fas fa-user"></i>
+                                <p>Becom a Volunteer</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-qcard ">
+                                <i class="fas fa-search-dollar red"></i>
+                                <p>Quick Fundrais</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-qcard ">
+                                <i class="fas fa-donate yell"></i>
+                                <p>Giv Donation</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-qcard ">
+                                <i class="fas fa-hands-helping blu"></i>
+                                <p>Help Someone</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ################# Mission Vision Start Here #######################--->
+
+    <section class="container-fluid mission-vision">
+        <div class="container">
+            <div class="row mission">
+                <div class="col-md-6 mv-det">
+                    <h1>Our Mission</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer neque libero, pulvinar et
+                        elementum quis, facilisis eu ante. Mauris non placerat sapien. Pellentesque tempor arcu non odio
+                        scelerisque ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius
+                        eros consequat auctor gravida. Fusce tristique lacus at urna sollicitudin pulvinar. Suspendisse
+                        hendrerit ultrices mauris.</p>
+                </div>
+                <div class="col-md-6 mv-img">
+                    <img src="{% static 'assets/images/misin.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="row vision">
+                <div class="col-md-6 mv-img">
+                    <img src="{% static 'assets/images/vision.jpg' %}" alt="">
+                </div>
+                <div class="col-md-6 mv-det">
+                    <h1>Our Vision</h1>
+                    <p>Ut ultricies lacus a rutrum mollis. Orci varius natoque penatibus et magnis dis parturient
+                        montes, nascetur ridiculus mus. Sed porta dolor quis felis pulvinar dignissim. Etiam nisl
+                        ligula, ullamcorper non metus vitae, maximus efficitur mi. Vivamus ut ex ullamcorper,
+                        scelerisque lacus nec, commodo dui. Proin massa urna, volutpat vel augue eget, iaculis tristique
+                        dui.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ################# Events Start Here#######################--->
+    <section class="events">
+        <div class="container">
+            <div class="session-title row">
+                <h2>Popular Causes</h2>
+                <p>We are a non-profital & Charity raising money for child education</p>
+            </div>
+            <div class="event-ro row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="event-box">
+                        <img src="{% static 'assets/images/events/image_08.jpg' %}" alt="">
+                        <h4>Child Education in Africa</h4>
+
+                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's </p>
+                        <button class="btn btn-success btn-sm">Donate Now</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="event-box">
+                        <img src="{% static 'assets/images/events/image_06.jpg' %}" alt="">
+                        <h4>Child Education in Africa</h4>
+                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's </p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="event-box">
+                        <img src="{% static 'assets/images/events/image_04.jpg' %}" alt="">
+                        <h4>Child Education in Africa</h4>
+                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's </p>
+                        <button class="btn btn-success btn-sm">Donate Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- ################# Charity Number Starts Here#######################--->
+
+
+    <div class="doctor-message">
+        <div class="inner-lay">
+            <div class="container">
+                <div class="row session-title">
+                    <h2>Our Achievemtns in Numbers</h2>
+                    <p>We can talk for a long time about advantages of our Dental clinic before other medical treatment
+                        facilities.
+                        But you can read the following facts in order to make sure of all pluses of our clinic:</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 numb">
+                        <h3>12+</h3>
+                        <span>YEARS OF EXPEREANCE</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>1812+</h3>
+                        <span>HAPPY CHILDRENS</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>52+</h3>
+                        <span>EVENTS</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>48+</h3>
+                        <span>FUNT RAISED</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+
+    <!-- ################# Our Blog Starts Here#######################--->
+
+    <section class="our-blog">
+        <div class="container">
+            <div class="row session-title">
+                <h2> Our Blog </h2>
+                <p>Take a look at what people say about US </p>
+            </div>
+            <div class="blog-row row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-blog">
+                        <figure>
+                            <img src="{% static 'assets/images/events/image_01.jpg' %}" alt="">
+                        </figure>
+                        <div class="blog-detail">
+                            <small>By Admin | August 10 2018</small>
+                            <h4>Methods of Recuirtments</h4>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit
+                                amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at,
+                                sagittis quis neque. Praesent.</p>
+                            <div class="link">
+                                <a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-blog">
+                        <figure>
+                            <img src="{% static 'assets/images/events/image_02.jpg' %}" alt="">
+                        </figure>
+                        <div class="blog-detail">
+                            <small>By Admin | August 10 2018</small>
+                            <h4>Methods of Recuirtments</h4>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit
+                                amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at,
+                                sagittis quis neque. Praesent.</p>
+                            <div class="link">
+                                <a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-blog">
+                        <figure>
+                            <img src="{% static 'assets/images/events/image_03.jpg' %}" alt="">
+                        </figure>
+                        <div class="blog-detail">
+                            <small>By Admin | August 10 2018</small>
+                            <h4>Methods of Recuirtments</h4>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit
+                                amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at,
+                                sagittis quis neque. Praesent.</p>
+                            <div class="link">
+                                <a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <h2>About Us</h2>
+                    <p>
+                        JustAppeal is a dedicated Islamic charity organization committed to serving humanity in accordance 
+                    </p>
+                    <p>with the principles of compassion, generosity, and justice taught in Islam. Our mission is rooted in the belief that every individual 
+                        deserves dignity, care, and support, regardless of their background or circumstances...
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h2>Useful Links</h2>
+                    <ul class="list-unstyled link-list">
+                        <li><a ui-sref="about" href="#/about">About us</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="portfolio" href="#/portfolio">Portfolio</a><i class="fa fa-angle-right"></i>
+                        </li>
+                        <li><a ui-sref="products" href="#/products">Latest jobs</a><i class="fa fa-angle-right"></i>
+                        </li>
+                        <li><a ui-sref="gallery" href="#/gallery">Gallery</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="contact" href="#/contact">Contact us</a><i class="fa fa-angle-right"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 map-img">
+                    <h2>Contact Us</h2>
+                    <address class="md-margin-bottom-40">
+                        JustAppeal <br>
+                       Mripur DOHS <br>
+                        Dhaka, Bangladesh <br>
+                        Phone: +0191 9159669599 <br>
+                        Email: <a href="mailto:info@anybiz.com" class="">info@justappeal.in</a><br>
+                        Web: <a href="smart-eye.html" class="">www.justappeal.in</a>
+                    </address>
+
+                </div>
+            </div>
+
+
+            <div class="nav-box row clearfix">
+                <div class="inner col-md-9 clearfix">
+                    <ul class="footer-nav clearfix">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Appeals</a></li>
+                        <li><a href="#">Our Work</a></li>
+                        <li><a href="#">Gallery</a></li>
+                         <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+
+
+                </div>
+                <div class="donate-link col-md-3"><a href="donate.html" class="btn btn-primary "><span
+                            class="btn-title">Donate Now</span></a></div>
+            </div>
+
+        </div>
+
+
+    </footer>
+    <div class="copy">
+        <div class="container">
+            <a href="https://www.smarteyeapps.com/">2023 &copy; All Rights Reserved | Designed and Developed by
+                JustAppeal</a>
+
+            <span>
+                <a><i class="fab fa-github"></i></a>
+                <a><i class="fab fa-google-plus-g"></i></a>
+                <a><i class="fab fa-pinterest-p"></i></a>
+                <a><i class="fab fa-twitter"></i></a>
+                <a><i class="fab fa-facebook-f"></i></a>
+            </span>
+        </div>
+
+    </div>
+
+
+</body>
+<script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'assets/plugins/slider/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/script.js' %}"></script>
+<script src="{% static 'assets/js/js.js' %}"></script>
+
+
+
+</html>

@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% block body %}
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Our Gallery</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> Gallery</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+ <!--  ************************* Gallery Starts Here ************************** -->
+        <div id="portfolio" class="gallery">    
+           <div class="container">
+              
+              <div class="row">
+                
+
+<!--         <div class="gallery-filter d-none d-sm-block">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <button class="btn btn-default filter-button" data-filter="hdpe">Light of Giving</button>
+            <button class="btn btn-default filter-button" data-filter="sprinkle">Inspire and Impact</button>
+            <button class="btn btn-default filter-button" data-filter="spray"> Muslim Hearts</button>
+            <button class="btn btn-default filter-button" data-filter="irrigation">Pictures of Faith</button>
+        </div>
+        <br/> -->
+        {% for image in images %}
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
+                <img src="{{ image.image.url }}" class="img-responsive">
+            </div> 
+        {% endfor %}
+        </div>
+    </div>
+       
+       
+       </div>
+        <!-- ######## Gallery End ####### -->    
+  
+                 
+  <!--  ************************* Footer Starts Here ************************** -->
+    {%  endblock %}

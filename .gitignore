@@ -1,0 +1,9 @@
+bin
+include
+lib
+lib64
+pyvenv.cfg
+migrations
+__pycache__
+db.sqlite3
+justappeal_frontend

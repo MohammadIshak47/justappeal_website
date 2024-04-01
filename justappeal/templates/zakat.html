@@ -1,0 +1,187 @@
+{% extends 'index.html' %}
+{% block body %}
+ 
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+    <div class="page-nav m-auto row text-center">
+        <div class="container text-center">
+            <div class="row ">
+                <h2>Zakat</h2>
+                <div class="d-inline m-auto text-center">
+                    <span class="m-auto d-inline"> <a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></span>
+                    <span><i class="fas fa-angle-double-right"></i>Calculate and Pay your Zakat Using Latest Nisab Value</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- ################# Zakat  Start Here#######################--->
+    <section class="our-blog" >
+        
+          <div class="container">
+            <div class="container content">
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            
+            <h4 style="font-weight: lighter;">Enter all assets that have been in your possession over a lunar year in the boxes below</h4>
+            <br>
+            <h3>Base Nisab on value of</h3>
+            <form action="/calculate"  method="post">
+                <div class="form-group">
+                    <select class="form-control selectNis" id="selecedtNisab" name="selectedNisab">
+                        <option value="silver" selected>Silver</option>
+                        <option value="gold">Gold</option>
+                    </select>
+                </div>
+                <h3>Gold & Silver</h3>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div style="background-color:#069D49;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" step="0.01" name="goldSilver" class="form-control valuePlus" id="exampleInputAmount" title="Value of silver and gold you possess" placeholder="Value of silver and gold you possess" value="">
+                    </div>
+                </div>
+                <h3>Cash</h3>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div style="background-color:#90226C;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" step="0.01" name="hand" class="form-control valuePlus" id="exampleInputAmount" title="In hand and in bank accounts" placeholder="In hand and in bank accounts">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="input-group">
+                        <div style="background-color:#B32629;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" step="0.01" name="future" class="form-control valuePlus" id="exampleInputAmount" title="Savings for the future" placeholder="Savings for the future">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div style="background-color:#F79421;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" step="0.01"  name="loaned" class="form-control valuePlus" id="exampleInputAmount" title="Money you have loaned" placeholder="Money you have loaned">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div style="background-color:#069D49;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" step="0.01"  name="busInvest" class="form-control valuePlus" id="exampleInputAmount" title="Business investments" placeholder="Business investments">
+                    </div>
+                </div>
+                <h3>Business Assets</h3>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div style="background-color:#1575BB;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" step="0.01"  name="stock" class="form-control valuePlus" id="exampleInputAmount" title="Stock value" placeholder="Stock value">
+                    </div>
+                </div>
+                <h3>Liabilities</h3>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div style="background-color:#90226C;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" step="0.01" name="owed" class="form-control valueMin" id="exampleInputAmount" title="Money owed (borrowed or credit)" placeholder="Money owed (borrowed or credit)">
+                    </div>
+                </div><div class="form-group">
+                    <div class="input-group">
+                        <div style="background-color:#B32629;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" step="0.01" name="employed" class="form-control valueMin" id="exampleInputAmount" title="Employees’ salaries" placeholder="Employees’ salaries">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div style="background-color:#F79421;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="text" name="other" class="form-control valueMin" id="exampleInputAmount" title="Other outgoings due (tax, rent, utilities)" placeholder="Other outgoings due (tax, rent, utilities)">
+                    </div>
+                </div>
+                <h3>Total Assets</h3>
+                <div class="form-group">
+
+                    <div class="input-group">
+
+                        <div style="background-color:#069D49;color: white;" class="input-group-addon" id="currency">£</div>
+                        <input type="number" min="0.01" step="0.01" name="total" class="form-control value" id="total" title="" placeholder="0" readonly>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-danger pull-right" style="margin-left:10px;">Calculate</button>
+                <input class="form-button btn btn-primary pull-right" type="reset" value="Reset">
+                <input type="hidden" name="_token" value="n41RgTqaY5f0CTVuwZ1BJDf9DqK3KRdwwZeQ4eXm" />
+
+            </form>
+        </div>
+
+       
+
+            <h3>Current Value of Nisab</h3>
+            <h4 style="font-weight: lighter;">Gold <span style="font-weight:bold" id="currency">£</span><span style="font-weight:bold">3716.76</span>  Silver <span style="font-weight:bold" id="currency">£</span><span style="font-weight:bold">357.2</span></h4>
+            <hr>
+            <h3>Guidance on weight:</h3>
+            <h4 style="font-weight: lighter;">Nisab in tola = <span style="font-weight:bold">7.5 tola</span></h4>
+        </div>
+    </div>
+    </div>
+<h3>Total Zakat Amount</h3>
+<p>Gold: £<span id="zakatGold">0.00</span></p>
+<p>Silver: £<span id="zakatSilver">0.00</span></p>
+<button type="button" class="btn btn-danger pull-right" style="margin-left:10px;" id="calculateButton">Calculate Zakat</button>
+<input class="form-button btn btn-primary pull-right" type="reset" value="Reset">
+<input type="hidden" name="_token" value="n41RgTqaY5f0CTVuwZ1BJDf9DqK3KRdwwZeQ4eXm" />
+    <div class="push"></div>
+</div>
+<form method="POST">
+    {% csrf_token %}
+    <div class="input-group">
+        <div style="background-color:#F79421;color: white;" class="input-group-addon" id="currency">TK</div>
+        <input type="text" name="amount" class="form-control valueMin" id="exampleInputAmount" title="Other outgoings due (tax, rent, utilities)" placeholder="Enter zakat amount to donate">
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit">Donate Now</button>
+</form>
+</section>
+
+<script>
+    // Function to calculate the total assets
+    function calculateTotal() {
+        // Get the values entered by the user
+        var goldSilver = parseFloat(document.getElementsByName('goldSilver')[0].value) || 0;
+        var hand = parseFloat(document.getElementsByName('hand')[0].value) || 0;
+        var future = parseFloat(document.getElementsByName('future')[0].value) || 0;
+        var loaned = parseFloat(document.getElementsByName('loaned')[0].value) || 0;
+        var busInvest = parseFloat(document.getElementsByName('busInvest')[0].value) || 0;
+        var stock = parseFloat(document.getElementsByName('stock')[0].value) || 0;
+        var owed = parseFloat(document.getElementsByName('owed')[0].value) || 0;
+        var employed = parseFloat(document.getElementsByName('employed')[0].value) || 0;
+        var other = parseFloat(document.getElementsByName('other')[0].value) || 0;
+
+        // Calculate the total assets
+        var totalAssets = goldSilver + hand + future + loaned + busInvest + stock - owed - employed - other;
+
+        // Update the total assets field
+        document.getElementsByName('total')[0].value = totalAssets.toFixed(2);
+    }
+
+    // Attach the calculateTotal function to the input fields' input event
+    var inputFields = document.querySelectorAll('.valuePlus, .valueMin');
+    inputFields.forEach(function (inputField) {
+        inputField.addEventListener('input', calculateTotal);
+    });
+
+    // Initial calculation when the page loads
+    calculateTotal();
+    function calculateZakat() {
+        // Get the total assets
+        var totalAssets = parseFloat(document.getElementsByName('total')[0].value) || 0;
+
+        // Nisab values for gold and silver
+        var nisabGold = 3716.76;
+        var nisabSilver = 357.2;
+
+        // Calculate the Zakat amount based on Nisab values
+        var zakatGold = totalAssets >= nisabGold ? totalAssets * 0.025 : 0;
+        var zakatSilver = totalAssets >= nisabSilver ? totalAssets * 0.025 : 0;
+
+        // Display the Zakat amount
+        document.getElementById('zakatGold').innerText = zakatGold.toFixed(2);
+        document.getElementById('zakatSilver').innerText = zakatSilver.toFixed(2);
+    }
+
+    // Attach the calculateZakat function to the "Calculate" button
+    document.getElementById('calculateButton').addEventListener('click', calculateZakat);
+</script>         
+  <!--  ************************* Footer Starts Here ************************** -->
+{% endblock %}

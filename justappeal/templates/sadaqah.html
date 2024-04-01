@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+ 
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+  <div class="page-nav m-auto row text-center">
+    <div class="container text-center">
+        <div class="row ">
+            <h2>Zakat</h2>
+            <div class="d-inline m-auto text-center">
+                <span class="m-auto d-inline"> <a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></span>
+                <span><i class="fas fa-angle-double-right"></i>Give your Sadaqah for needy</span>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+   
+  <!-- ################# Volunteer  Start Here#######################--->
+    <section class="our-blog" >
+        
+    <div class="container" >
+    <h1>Sadaqah - Give Generously</h1>
+    <p>Your Sadaqah can make a positive impact on those in need. Donate generously to support our charitable activities.</p>
+    <form method="POST">
+      {% csrf_token %}
+    <!-- Donation Amount Input -->
+    <div class="form-group">
+        <label for="donation-amount">Donation Amount (in USD)</label>
+        <input type="number" class="form-control w-50" id="donation-amount" name="amount" placeholder="Enter the amount you wish to donate" required>
+      </div>
+  
+      <!-- Donate Button -->
+      <button class="btn btn-primary btn-lg" id="donate-button" type="submit">Donate</button>
+      </form>
+    </div>
+
+        
+         	
+         </section>
+         
+      
+       
+  
+                 
+  <!--  ************************* Footer Starts Here ************************** -->
+  {% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block body %}
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Global Giving  Appeals</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> Global Giving Appeals</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+  <!-- ################# Events Start Here#######################--->
+    <section class="events">
+        <div class="container">
+           
+            <div class="event-ro row">
+                {% for appeals in globalappeals %}
+                <div class="col-md-4 col-sm-6">
+                    <div class="event-box">
+                        <img src="{{ appeals.image.url }}" alt="">
+                        <h4>{{ appeals.title }}</h4>
+                        <small>By {{ appeals.author }} | {{ appeals.created_date }} | {{ appeals.region }}</small>
+					
+                        <p class="raises"><span>Raised : {{ appeals.raised_fund }}</span> / {{ appeals.donation }} </p>
+                        <p class="desic">{{ appeals.description|truncatewords:50 }}</p>
+                        <form method="POST">
+                            {% csrf_token %}
+                           <div class="input-group">
+                              <input type="number" class="form-control" id="donationAmount" placeholder="Enter amount" name="amount">
+                              <input type="hidden" value="{{ appeals.id }}" name="id">
+                              <div class="input-group-append">
+                               <button class="btn btn-primary" type="submit">Donate Now</button>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>   
+  {% endblock %}
+                 
+  <!--  ************************* Footer Starts Here ************************** -->

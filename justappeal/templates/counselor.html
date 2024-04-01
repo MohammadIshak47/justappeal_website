@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+{% block body %}
+ 
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Counselor</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i>Join Us as a Counselor</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+  <!-- ################# Volunteer  Start Here#######################--->
+    <section class="our-blog" >
+        
+    
+
+        <div class="container" style="display: inline-block;">
+            <h1>Counselor Form</h1>
+            <div style="padding:20px" class="col-sm-7">
+
+
+            <form method="POST" action="">
+              {% csrf_token %}
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" class="form-control" id="full-name" name="full_name" placeholder="Enter your full name" required>
+              </div>
+        
+              <!-- Email Address -->
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+              </div>
+        
+              <!-- Mobile Number -->
+              <div class="form-group">
+                <label for="number">Mobile Number</label>
+                <input type="tel" class="form-control" id="number" name="num" placeholder="Enter your mobile number" required>
+              </div>
+        
+              <!-- Age -->
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" required>
+              </div>
+        
+              <!-- Country Selection -->
+              <div class="form-group">
+                <label for="country" >Country</label>
+                <select class="form-control" id="country" name = "country" required>
+                  <option value="" disabled selected>Select your country</option>
+                  <option value="USA">USA</option>
+                  <option value="Canada">Canada</option>
+                  <option value="UK">UK</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="address" >Address</label>
+                <input type="text" name = "address" class="form-control" id="address" placeholder="123 Main St">
+            </div>
+            
+              <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="imageUploader" name = "image">
+                  <label class="custom-file-label" for="imageUploader">Choose Image</label>
+             
+              </div>
+      
+        
+              <!-- Submit Button -->
+              <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+            
+            </div>
+          </div>
+         	
+         </section>
+         
+{% endblock %}

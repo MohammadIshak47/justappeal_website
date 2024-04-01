@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+ 
+     <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Gift Cards</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i>Gift Cards</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+  <!-- ################# Gift Cards   Start Here#######################--->
+    <section class="our-blog" >
+        
+        <div class="col-md-12 all-product-page">
+    <div class="container">
+        <div class="col-sm-12 category-intro">
+            <h3 class="text-center bold">Gifts</h3>
+            <p class="text-center">Select an inspiring gift that will help families living in extreme poverty.</p>
+            <p style="font-size: 14px;">We reserve the right to allocate funds to where it’s most needed to ensure all our programmes and beneficiaries are supported effectively. If the needs of the appeal allocated to your chosen gift are already being fulfilled during your time of purchase, we will do our best to ensure your donation is allocated to a cause as close to your request as possible.</p>
+        </div>
+        <div class="container mt-5">
+    <h3 class="text-center">Gift Cards</h3>
+    <div class="row">
+      <!-- Gift Card 1 -->
+      <div class="col-md-4">
+
+        {% for gift_card in gifts %}
+        <div class="card gift-card">
+          <img src="{{ gift_card.image.url }}" class="card-img-top" alt="Gift Card 1">
+          <div class="card-body">
+            <h5 class="card-title">{{ gift_card.name }}</h5>
+            <p class="card-text" style="color: #00c853;">Price: {{ gift_card.price }}</p>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ gift_card.price }}" name="amount">
+                <input type="hidden" value="{{ gift_card.id }}" name="id">
+                <button class="btn buy-button" type="submit">Buy Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+
+    </div>
+</div>
+</div>
+</div>
+        
+    
+</div>         
+
+</div>
+
+<script>
+    function buyGiftCard(giftCardTitle, price) {
+      alert(`You have purchased the ${giftCardTitle} gift card for $${price}. Thank you for your donation!`);
+      // You can add code here to handle the purchase, e.g., process payment or store the purchase.
+    }
+  </script>       
+</section>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<section class="our-blog"  >
+  <!-- cart main wrapper start -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h3>Shopping Cart</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Thumbnail</th>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="product1.jpg" alt="Product 1" width="80"></td>
+              <td>Product 1</td>
+              <td>$19.99</td>
+              <td>
+                <button class="btn btn-sm btn-danger" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button class="btn btn-sm btn-success" onclick="increaseQuantity(this)">+</button>
+              </td>
+              <td class="total">$19.99</td>
+              <td><button class="btn btn-sm btn-danger" onclick="removeItem(this)">Remove</button></td>
+            </tr>
+            <tr>
+              <td><img src="product2.jpg" alt="Product 2" width="80"></td>
+              <td>Product 2</td>
+              <td>$29.99</td>
+              <td>
+                <button class="btn btn-sm btn-danger" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity">2</span>
+                <button class="btn btn-sm btn-success" onclick="increaseQuantity(this)">+</button>
+              </td>
+              <td class="total">$59.98</td>
+              <td><button class="btn btn-sm btn-danger" onclick="removeItem(this)">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+        <div class="row">
+            <div class="col-lg-5 ml-auto">
+                <!-- Cart Calculation Area -->
+                <div class="cart-calculator-wrapper">
+                    <div class="cart-calculate-items">
+                        <h3>Cart Totals</h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                
+                                <tr class="total">
+                                    <td>Total</td>
+                                    <td class="total-amount">$300</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <a href="{% url 'pay_now' %}"> <button class="btn btn-outline-success">Proceed To Checkout</button> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cart main wrapper end -->
+        
+<script>
+  function increaseQuantity(button) {
+    const quantitySpan = button.parentElement.querySelector('.quantity');
+    const totalCell = button.parentElement.parentElement.querySelector('.total');
+    const priceCell = button.parentElement.parentElement.querySelector('td:nth-child(3)');
+    const currentQuantity = parseInt(quantitySpan.innerText);
+    const price = parseFloat(priceCell.innerText.replace('$', ''));
+    const newQuantity = currentQuantity + 1;
+    quantitySpan.innerText = newQuantity;
+    totalCell.innerText = '$' + (price * newQuantity).toFixed(2);
+  }
+
+  function decreaseQuantity(button) {
+    const quantitySpan = button.parentElement.querySelector('.quantity');
+    const totalCell = button.parentElement.parentElement.querySelector('.total');
+    const priceCell = button.parentElement.parentElement.querySelector('td:nth-child(3)');
+    const currentQuantity = parseInt(quantitySpan.innerText);
+    const price = parseFloat(priceCell.innerText.replace('$', ''));
+    if (currentQuantity > 1) {
+      const newQuantity = currentQuantity - 1;
+      quantitySpan.innerText = newQuantity;
+      totalCell.innerText = '$' + (price * newQuantity).toFixed(2);
+    }
+  }
+
+  function removeItem(button) {
+    const row = button.parentElement.parentElement;
+    row.remove();
+  }
+</script>    
+
+</section>
+
+         
+      
+{% endblock %}

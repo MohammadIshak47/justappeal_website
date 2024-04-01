@@ -1,0 +1,96 @@
+{% extends 'index.html' %} {% load static %} {% block body %}
+<!--  ************************* Page Title Starts Here ************************** -->
+
+<div class="page-nav no-margin row">
+  <div class="container">
+    <div class="row">
+      <h2>Our Finacial Information</h2>
+      <ul>
+        <li>
+          <a href="#"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li><i class="fas fa-angle-double-right"></i> Financial Information</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--  ************************* financial_information Starts Here ************************** -->
+<div id="portfolio" class="gallery">
+  <div class="container">
+    <div class="row">
+      <!-- Financial Information Section -->
+      <section id="financial-info" class="section">
+        <div class="container">
+          <h2 class="text-center mb-4">Financial Information</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <img
+                src="{% static 'assets/images/finance.jpg' %}"
+                class="img-fluid"
+                alt="Financial Image"
+              />
+            </div>
+            <div class="col-md-6">
+              <h4 style='text-align:center;'>How JustAppeal is Funded</h4>
+            
+              
+              <div class="simple-bar-chart">
+                <div class="item" style="--clr: #5eb344; --val: 30">
+                  <div class="label">individuals</div>
+                  <div class="value">30%</div>
+                </div>
+
+                <div class="item" style="--clr: #fcb72a; --val: 20">
+                  <div class="label">Events</div>
+                  <div class="value">20%</div>
+                </div>
+
+                <div class="item" style="--clr: #f8821a; --val: 10">
+                  <div class="label">Gift Cards</div>
+                  <div class="value">10%</div>
+                </div>
+
+                <div class="item" style="--clr: #e0393e; --val: 30">
+                  <div class="label">Corporate Donations</div>
+                  <div class="value">30%</div>
+                </div>
+
+                <div class="item" style="--clr: #963d97; --val: 5">
+                  <div class="label">Products</div>
+                  <div class="value">5%</div>
+                </div>
+
+                <div class="item" style="--clr: #069cdb; --val: 5">
+                  <div class="label">Investments</div>
+                  <div class="value">5%</div>
+                </div>
+              </div>
+            </div>
+           <p> In fiscal year 2023, 30% of our work was funded by often rely on donations from individuals, whether they are obligatory (like Zakat, which is a form of almsgiving in Islam) or voluntary contributions (Sadaqah). These donations can come from Muslims worldwide who want to support charitable causes aligned with Islamic principles.</p><br>
+<p>20% of our work was funded by  events, campaigns, or charity drives is a common way for Islamic charities to raise funds. These events can include charity dinners, auctions, or online fundraising campaigns.</p><br>
+<p>10% of our work was funded by Gift Cards & selling courses </p> <br>
+<p> 30% of our work was funded by  businesses or corporations, either as part of their corporate social responsibility initiatives or through sponsorships of specific projects,appeals.</p> <br>
+<p> 5% of our work was funded by offer services or products where the revenue generated from these activities supports their charitable endeavors. For instance, selling merchandise where proceeds go towards the charity's cause. </p> <br>
+<p>5% of our work was funded by receive endowments (Waqf) from donors. Income generated from these investments can contribute to funding various charitable activities.</p>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-md-12">
+              <h3 style='text-align:center'>Additional Information</h3>
+              <p>
+                Mission and Objectives: JustAppeal, like other Islamic charities, likely has a clearly defined mission and objectives. This may include providing aid and support to the underprivileged, promoting education, healthcare, social welfare, disaster relief, or other humanitarian causes, all in alignment with Islamic principles.
+              </p>
+              <br>
+              <p>Programs and Services: They may offer various programs or services designed to address specific needs within communities, both locally and internationally. This might include orphan sponsorship, food distribution, healthcare initiatives, educational programs, emergency relief efforts, etc.</p> <br>
+              <p>Transparency and Accountability: Charities often emphasize transparency and accountability in their operations. They might share annual reports, financial statements, and details about how funds are utilized to ensure donors understand the impact of their contributions.</p> <br>
+              <p>It's important to note that the specific information about JustAppeal, its initiatives, impact, and operational details can change over time. For accurate and detailed information about JustAppeal or any specific Islamic charity, I would recommend visiting their official website, reviewing their reports and publications, or contacting them directly for the most up-to-date and comprehensive information.</p> <br>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

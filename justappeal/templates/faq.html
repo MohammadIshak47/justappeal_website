@@ -1,0 +1,69 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>FAQ</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> FAQ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+ <!--  ************************* FAQ Starts Here ************************** -->
+        <div id="portfolio" class="gallery">    
+           <div class="container">
+              
+              <div class="row">
+
+                <div class="container py-4">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                This section contains a wealth of information related to <strong>JustAppeal</strong>. If you cannot find an answer to your question, please feel free to contact us.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+            
+                            <div id="accordion">
+                                <div class="faq-header">General Questions</div>
+                                <!-- FAQ Items -->
+                                <!-- Replace this section with your own FAQ content -->
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Is account registration required for donations?
+                                            </button>
+                                        </h5>
+                                    </div>
+            
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Account registration at <strong>JustAppeal</strong> is not mandatory for making donations. However, having an account allows you to track your donations and access additional features.
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <!-- Add more FAQ sections similar to the above structure -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+        </div>
+    </div>
+       
+       
+       </div>
+     
+    {%  endblock %}

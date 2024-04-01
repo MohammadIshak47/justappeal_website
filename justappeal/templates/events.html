@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+ 
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Current Events</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> Current Event</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+  <!-- ################# Events Start Here#######################--->
+    <section class="events">
+        <div class="container mt-5">
+            <h3 class="text-center">Upcoming Events</h3>
+            <div class="row">
+              <!-- Event 1 -->
+              {% for event in events %}
+              <div class="col-md-4">
+                <div class="card event-card">
+                  <img src="{% static 'assets/images/sheep.jpg' %}" class="card-img-top" alt="Event 1">
+                  <div class="card-body">
+                    <h5 class="card-title" style="color: darkolivegreen">{{ event.title }}</h5>
+                    <p class="card-text">{{ event.description }}</p>
+                    <p style="color: #ff4500;">Start Date: {{ event.created_date }}</p>
+                    <p style="color: #ff4500;">End Date: {{ event.end_date }}</p>
+                    {% if event.ticket %}
+                    <p style="color: #ff4500;">Ticket Price: $25.00</p>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{ event.price }}" name="amount">
+                        <input type="hidden" value="{{ event.id }}" name="id">
+                        <button class="btn buy-button" type="submit">Buy Now</button>
+                    </form>
+                    {% endif %}
+
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+ 
+    </section>   
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% block body %}
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Our Courses</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> Courses</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+ <!--  ************************* Courses Starts Here ************************** -->
+        <div id="portfolio" class="gallery"> 
+            <div class="container">
+                <div class="row">
+                    {% for course in courses %}
+                    <div class="col-md-3">
+                        <div class="card">
+                            <!-- Video player (example) -->
+                            <video width="100%" controls>
+                                <source src="{{ course.video.url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ course.title }}</h5>
+                                <p class="card-text">{{ course.description }}</p>
+                                <p class="card-text">Ratings: {{ course.ratings }}</p>
+                                <p class="card-text">Price: ${{ course.price }}</p>
+                                <a href="" class="btn btn-success" >Buy Now</a> <!-- Modify this link as needed -->
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+       
+       
+       </div>
+       
+    {%  endblock %}

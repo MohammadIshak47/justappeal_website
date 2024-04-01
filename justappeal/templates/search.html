@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+  <!--  ************************* Page Title Starts Here ************************** -->
+        
+  <div class="page-nav m-auto row text-center">
+	<div class="container text-center">
+		<div class="row ">
+			<h2>Blogs</h2>
+			<div class="d-inline m-auto text-center">
+				<span class="m-auto d-inline"> <a href="{% url 'home' %}"><i class="fas fa-home"></i> Home </a></span>
+				<span><i class="fas fa-angle-double-right"></i> Blog </span>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+    {%  if  page_obj %}
+  Search Results : {{search}}
+  {% else %}
+  Search not found : {{search}}
+  {% endif %}
+</div>
+    
+<section class="events">
+    <div class="container">
+       
+        <div class="event-ro row">
+            {% for appeal in page_obj %}
+            <div class="col-md-4 col-sm-6">
+                <div class="event-box">
+                    <img src="{{ appeal.image.url }}" alt="">
+                    <h4>{{ appeal.title }}</h4>
+                    <small>By {{ appeal.author }} | {{ appeal.created_date }} | {{ appeal.region }}</small>
+                
+                    <p class="raises"><span>Raised : $34,425</span> / {{ appeal.donation }} </p>
+                    <p class="desic">{{ appeal.description|truncatewords:50 }}</p>
+                   <a href="donate.html"><button class="btn btn-success btn-sm">Donate Now</button></a> 
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> 
+{% endblock %}
